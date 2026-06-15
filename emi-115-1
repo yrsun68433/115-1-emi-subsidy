@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>115-1 英語授課補助申請懶人包</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #1a1a1a;
+    --mid: #555;
+    --rule: #d0ccc8;
+    --bg: #faf9f7;
+    --accent: #2a4a6b;
+    --accent-light: #eaf0f6;
+    --warn: #7a3b1e;
+    --warn-light: #fdf3ee;
+    --green: #1e5c3a;
+    --green-light: #edf6f1;
+  }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.75;
+    padding: 48px 24px 80px;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    border-top: 3px solid var(--accent);
+    padding-top: 28px;
+    margin-bottom: 36px;
+  }
+
+  .eyebrow {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 14px;
+  }
+
+  .deadline-bar {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--warn-light);
+    border-left: 3px solid var(--warn);
+    padding: 10px 16px;
+    font-size: 14px;
+    color: var(--warn);
+    font-weight: 500;
+    margin-top: 4px;
+  }
+
+  .deadline-bar strong {
+    font-size: 16px;
+  }
+
+  /* Apply button */
+  .apply-block {
+    margin: 28px 0;
+    background: var(--accent);
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .apply-block span {
+    color: #fff;
+    font-size: 14px;
+    opacity: 0.85;
+  }
+
+  .apply-btn {
+    display: inline-block;
+    background: #fff;
+    color: var(--accent);
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 9px 20px;
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    transition: opacity 0.15s;
+  }
+
+  .apply-btn:hover { opacity: 0.85; }
+
+  /* Sections */
+  .section {
+    margin-bottom: 32px;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  /* Grid for eligibility */
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 520px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+
+  .card {
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 14px 16px;
+  }
+
+  .card-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--mid);
+    letter-spacing: 0.06em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+
+  .card ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .card ul li {
+    font-size: 14px;
+    padding: 3px 0;
+    padding-left: 14px;
+    position: relative;
+    color: var(--ink);
+  }
+
+  .card ul li::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* Threshold table */
+  .threshold {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  .threshold th {
+    text-align: left;
+    font-weight: 500;
+    color: var(--mid);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    padding: 6px 12px;
+    background: #f0eeeb;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .threshold td {
+    padding: 9px 12px;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+
+  .threshold tr:last-child td { border-bottom: none; }
+
+  /* Amount block */
+  .amount-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  @media (max-width: 520px) {
+    .amount-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .amount-card {
+    background: var(--accent-light);
+    border: 1px solid #c4d4e3;
+    padding: 14px 12px;
+    text-align: center;
+  }
+
+  .amount-label {
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .amount-num {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .amount-unit {
+    font-size: 11px;
+    color: var(--mid);
+    margin-top: 2px;
+  }
+
+  .amount-note {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.6;
+  }
+
+  .amount-note li {
+    padding: 2px 0;
+    list-style: none;
+    padding-left: 14px;
+    position: relative;
+  }
+
+  .amount-note li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 3px;
+  }
+
+  /* Obligation */
+  .oblig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 520px) {
+    .oblig-grid { grid-template-columns: 1fr; }
+  }
+
+  .oblig-card {
+    background: var(--green-light);
+    border: 1px solid #b8d9c6;
+    padding: 14px 16px;
+  }
+
+  .oblig-card .card-label {
+    color: var(--green);
+  }
+
+  .oblig-card ul li::before {
+    color: var(--green);
+  }
+
+  /* TA block */
+  .ta-block {
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 16px 18px;
+    font-size: 14px;
+  }
+
+  .ta-block p { margin-bottom: 8px; color: var(--mid); }
+  .ta-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+  }
+
+  .ta-tag {
+    background: var(--accent-light);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border: 1px solid #c4d4e3;
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid var(--rule);
+    padding-top: 20px;
+    margin-top: 40px;
+    font-size: 12px;
+    color: var(--mid);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .footer a { color: var(--accent); text-decoration: none; }
+  .footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div class="eyebrow">國立臺灣大學國際事務處</div>
+    <h1>115 學年度第 1 學期<br>英語授課補助申請懶人包</h1>
+    <div class="deadline-bar">
+      ⚠ 申請截止：<strong>115 年 7 月 10 日（五）</strong>
+    </div>
+  </div>
+
+  <div class="apply-block">
+    <span>請欲申請之教師直接至國際處系統線上提出申請</span>
+    <a class="apply-btn" href="https://oiasystem.ntu.edu.tw/emi_courses/" target="_blank">前往申請系統 →</a>
+  </div>
+
+  <!-- 補助對象與課程 -->
+  <div class="section">
+    <div class="section-title">補助對象與課程類別</div>
+    <div class="two-col">
+      <div class="card">
+        <div class="card-label">補助對象</div>
+        <ul>
+          <li>編制內專任教師</li>
+          <li>聘任時未要求以全英文授課，並經國際處認定符合之專案教師</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-label">適用課程類別</div>
+        <ul>
+          <li>基礎專業及通識課程</li>
+          <li>領域專長課程</li>
+          <li>系所訂定必修課程（不含共同必修或通識）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 修課人數門檻 -->
+  <div class="section">
+    <div class="section-title">修課人數門檻</div>
+    <table class="threshold">
+      <thead>
+        <tr>
+          <th>課程層級</th>
+          <th>最低修課人數</th>
+          <th>備註</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>大學部</td>
+          <td>25 人以上</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>高年級課程</td>
+          <td>20 人以上</td>
+          <td>課程識別碼含 U 者</td>
+        </tr>
+        <tr>
+          <td>研究所</td>
+          <td>12 人以上</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>博士班</td>
+          <td>6 人以上</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 補助金額 -->
+  <div class="section">
+    <div class="section-title">補助金額</div>
+    <div class="amount-grid">
+      <div class="amount-card">
+        <div class="amount-label">新開課程</div>
+        <div class="amount-num">5 萬</div>
+        <div class="amount-unit">授課補助＋教材補助 2 萬</div>
+      </div>
+      <div class="amount-card">
+        <div class="amount-label">續開課程</div>
+        <div class="amount-num">3 萬</div>
+        <div class="amount-unit">授課補助</div>
+      </div>
+      <div class="amount-card">
+        <div class="amount-label">每學期上限</div>
+        <div class="amount-num">8 萬</div>
+        <div class="amount-unit">授課＋教材合計</div>
+      </div>
+    </div>
+    <ul class="amount-note">
+      <li>修課人數達 80 人，授課補助以 1.5 倍發放</li>
+      <li>課程未達 2 學分，補助以 1/2 金額核發</li>
+      <li>完成 EMI Plus 教師增能工作坊認證者，3 學年內補助以 1.2 倍發放（上限 10 萬）</li>
+    </ul>
+  </div>
+
+  <!-- 獲補助後應完成事項 -->
+  <div class="section">
+    <div class="section-title">獲補助後應完成事項</div>
+    <div class="oblig-grid">
+      <div class="oblig-card">
+        <div class="card-label">所有獲補助者</div>
+        <ul>
+          <li>每門課填寫 EMI 課程教學成效自評問卷</li>
+          <li>補助分兩期：先核發 1/2，116 年 1 月 31 日前完成 CBE 指定項目後發放餘款</li>
+        </ul>
+      </div>
+      <div class="oblig-card">
+        <div class="card-label">首次獲補助者另須</div>
+        <ul>
+          <li>參加 1 場 EMI 推廣活動</li>
+          <li>完成 1 門 CBE 線上課程</li>
+          <li>配合 CBE 安排之外部觀課（每學期至多 1 次）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 教學助理獎勵金 -->
+  <div class="section">
+    <div class="section-title">全英語授課教學助理獎勵金</div>
+    <div class="ta-block">
+      <p>獎勵金標準：學士生 7,000 元／月；碩士生 9,500 元／月；博士生 12,000 元／月</p>
+      <p>申請方式：與授課補助一併申請；若課程不申請授課補助，須另以簽文單獨申請</p>
+      <p>申請單位依課程類別不同：</p>
+      <div class="ta-row">
+        <span class="ta-tag">通識課程 → 共教中心</span>
+        <span class="ta-tag">基礎專業課程 → 教務處</span>
+        <span class="ta-tag">領域專長／系訂必修 → 國際處</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>詳細規定請參閱國際處公文及附件，或洽承辦人員</span>
+    <span>
+      王郁文 3366-2007#397｜吳欣穎 #396｜陳韻典 #398
+    </span>
+  </div>
+
+</div>
+</body>
+</html>
